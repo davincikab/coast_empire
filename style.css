@@ -224,6 +224,7 @@ body {
     background-color: var(--primary);
     color:var(--white);
     flex: auto 1;
+    width: 320px;
     /* border-radius: 5px; */
 }
 
@@ -266,6 +267,10 @@ span.icons {
 
     .contact-details {
         flex-direction: column;
+    }
+
+    .contact-entry {
+        height: 140px;
     }
 
     .image-grid {
