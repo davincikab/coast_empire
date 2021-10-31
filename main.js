@@ -52,4 +52,23 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 
+    // listener
+    let currentWindowPosition = 0;
+    let navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(navLink => {
+        navLink.onclick = function(e) {
+            // scroll behavior
+            e.preventDefault();
+
+            // get the scrollable element y positon
+            let { dataset:{ href }} = e.target;
+            console.log(href);            
+            
+            let targetSection = document.getElementById(href);
+            // let scrollableHeight = targetSection.getBoundingClientRect().top;
+
+            let scrollableHeight = targetSection.offsetTop;
+            window.scrollTo(0, scrollableHeight - 70);
+        }
+    });
 });

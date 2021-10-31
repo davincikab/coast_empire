@@ -1,14 +1,15 @@
 :root {
-    --black:#000;
+    --black:#212529;
     --gray:rgb(61, 61, 61);
     --white:#fff;
     --light-gray:#ddd;
-    --primary:#0099ff;
+    --primary:#3B5ABF;
 }
 
+/* font-family: 'Merriweather Sans', sans-serif; */
 body {
     margin:0;
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
     font-size: 16px;
 }
 
@@ -20,17 +21,35 @@ body {
     color:var(--light-gray);
 }
 
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    color:var(--primary);
+}
+
+#mainNav {
+    background-color: var(--white);
+    transition: all 0.5s ease;
+}
+
 #mainNav .navbar-brand {
     color:var(--light-gray);   
 }
 
+#mainNav .navbar-brand img {
+    height: 35px;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: var(--black);
+}
+
 #mainNav.navbar-shrink {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    background-color: #fff;
+    background-color: var(--white);
+    padding:0.5rem 0em !important;
 }
 
 #mainNav.navbar-shrink .navbar-brand {
-    color: #212529;
+    color: var(--black);
 }
 
 #mainNav.navbar-shrink .navbar-brand:hover {
@@ -52,9 +71,9 @@ body {
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color:rgba(0, 0, 0, 0.589);
+    /* background-color:rgba(0, 0, 0, 0.589); */
     background-image: url(media/images/bg_img.jpeg);
-    background-blend-mode: color;
+    /* background-blend-mode: color; */
 }
 
 .landing-section video {
@@ -92,12 +111,14 @@ body {
 
 .about-content {
     width: 60%;
-    line-height: 1.6;
+    line-height: 1.8;
+    letter-spacing: 1px;
+
 }
 
 
 .gallery-section {
-    margin:2rem 0;
+    margin:0 0 2rem 0;
     padding:1rem;
     display: flex;
     align-items: center;
@@ -149,6 +170,17 @@ body {
     box-shadow: 0px 0px 0.5rem rgb(179 179 179);
 }
 
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title h3 {
+    width: 80%;
+    margin:0;
+    padding: 0 1rem;
+}
 /* contact section */
 .contact-section {
     display: flex;
@@ -163,15 +195,57 @@ body {
 .contact-entry {
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 2px 0.3em #ddd;
-    padding: 12px;
-    border-radius: 5px;
+    /* box-shadow: 2px 2px 0.3em #ddd; */
+    padding: 1rem;
+    background-color: var(--primary);
+    color:var(--white);
+    flex: auto 1;
+    /* border-radius: 5px; */
 }
 
+.contact-entry h3 {
+    margin:0;
+    font-size: 1.2rem;
+}
+
+span.icons {
+    line-height: 1.8;
+    font-size: 1.5rem;
+}
+
+.text-plain {
+    text-decoration: none;
+}
 /* footer section */
 .footer-section {
     background-color:var(--gray);
-    height: 50px;
+    height: 100px;
     color:white;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-section p {
+    margin:0;
+}
+
+@media screen and (max-width:480px) {
+    .contact-details {
+        flex-direction: column;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr) );
+        width: 100%;
+    }
+
+    .image-grid img {
+        object-fit: cover;
+    }
+
+    .members {
+        width: 90%;
+    }
 }
