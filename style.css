@@ -143,6 +143,20 @@ body {
 
 }
 
+#card-section {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.card-body {
+    height: 40vh;
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
 
 .gallery-section {
     margin:0 0 2rem 0;
@@ -174,14 +188,15 @@ body {
 
 /* team section */
 .team-section {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
 }
 
 .members {
-    width: 50%;
+    width:auto;
     display: flex;
+    flex-direction: column;
 }
 
 .members img {
@@ -195,7 +210,24 @@ body {
     text-align: center;
     /* box-shadow: 0px 0px 0.5rem var(--gray); */
     box-shadow: 0px 0px 0.5rem rgb(179 179 179);
+    cursor: pointer;
 }
+
+.members .team-member div {
+    pointer-events: none;
+}
+
+.content-center {
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.interview-section {
+    /* width: auto; */
+}
+/*  */
 
 .section-title {
     display: flex;

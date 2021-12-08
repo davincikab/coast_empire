@@ -71,4 +71,33 @@ window.addEventListener('DOMContentLoaded', event => {
             window.scrollTo(0, scrollableHeight - 70);
         }
     });
+
+
+    // members section
+    var memberInfo = [
+        {
+            name:'member-mat',
+            interview:`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus enim, eleifend vitae dui sed, scelerisque sollicitudin magna. Phasellus vulputate tincidunt turpis, eget rhoncus leo auctor a. Nam vel nisl quis nisi lobortis imperdiet. Aliquam ut tellus sit amet enim venenatis scelerisque vel eget metus. Praesent ut magna rhoncus, imperdiet massa quis, pellentesque metus. Aliquam sed tempor est. Proin lacus elit, sollicitudin ut turpis nec, vestibulum vehicula lorem. Mauris vel tempor elit, a interdum enim.
+            <br/>
+            Aenean porta enim eu orci pulvinar ornare. Cras non diam ornare, viverra mauris vel, semper nulla. Nunc consectetur eu enim at sagittis. In efficitur leo et euismod mollis. Suspendisse nec felis eu tellus dignissim ultricies. Pellentesque finibus imperdiet libero. Fusce vitae blandit velit. Suspendisse urna erat, pellentesque eu tellus nec, convallis molestie enim. Vivamus malesuada lacinia metus, id varius tellus fermentum in. Sed sed ullamcorper libero, vitae malesuada ligula.`
+        },
+        {
+            name:'member-anto',
+            interview:`Proin fringilla ultricies est id laoreet. Phasellus lobortis mauris eget scelerisque tincidunt. Sed a leo ac purus cursus tempus. Phasellus ultrices sollicitudin hendrerit. Ut ut pellentesque tortor, eu lacinia ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vehicula eget eros eu ultricies. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            <br/>
+            In tempus malesuada condimentum. Etiam at lorem ut eros rhoncus iaculis quis et ipsum. Mauris et tincidunt risus, in vulputate eros. Suspendisse potenti. Nunc at dictum mi. Sed at pretium ante. Donec hendrerit a massa ac interdum. Mauris sed ante molestie dui feugiat accumsan vel at erat. `
+        }
+    ];
+
+    var interviewBody = document.getElementById("interview-body");
+    var teamMembers = document.querySelectorAll(".team-member");
+    teamMembers.forEach(teamMember => {
+        teamMember.onclick = function(e) {
+            // g
+            let id = e.target.id;
+            let memberIns = memberInfo.find(info => info.name == id);
+
+            interviewBody.innerHTML = memberIns.interview;
+        }
+    });
 });
